@@ -1,12 +1,8 @@
 <template>
   <div class="home">
     <div class="cards">
-      <productCard cardName="Card 1" />
-      <productCard cardName="Card 2" />
-      <productCard cardName="Card 3" />
-      <productCard cardName="Card 4" />
-      <productCard cardName="Card 5" />
-      <productCard cardName="Card 6" />
+      <productCard v-for="event in $store.state.events" :key="event.id" :cardName="event.title" :cardId="event.id"/>
+      
     </div>
   </div>
   <Footer />
