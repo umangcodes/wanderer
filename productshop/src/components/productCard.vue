@@ -5,11 +5,15 @@
 </template>
 
 <script>
+// console.log(this.cardId)
 export default {
   props: {
     cardName: {
       required: true,
       type: String,
+    },
+    cardId: {
+      type: Number,
     },
   },
 }

@@ -16,8 +16,8 @@ export default createStore({
       },
       {
         id: 2,
-        category: 'C1',
-        title: 'CT1',
+        category: 'C2',
+        title: 'CT2',
         description: 'CD1',
         location: 'CL1',
         date: 'CD1',
@@ -27,8 +27,8 @@ export default createStore({
       },
       {
         id: 3,
-        category: 'C1',
-        title: 'CT1',
+        category: 'C3',
+        title: 'CT3',
         description: 'CD1',
         location: 'CL1',
         date: 'CD1',
