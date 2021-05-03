@@ -9,16 +9,26 @@
       <productCard cardName="Card 6" />
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
 // @ is an alias to /src
 import productCard from '@/components/productCard.vue'
+import Footer from '../components/footer.vue'
+
 export default {
   name: 'Home',
   components: {
     productCard,
+    Footer,
   },
+  data(){
+    return{
+      company : "SSE",
+    }
+
+  }
 }
 </script>
 
