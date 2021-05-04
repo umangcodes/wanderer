@@ -1,6 +1,9 @@
 <template>
   <div id="nav">
     <div class="nav-bar">
+      <!-- <div class="logo">
+        <img src="..\src\assets\spices.jpeg" alt="" />
+      </div> -->
       <div class="nav-tab">
         <router-link to="/">Home</router-link>
       </div>
@@ -79,5 +82,11 @@ body {
 
 .nav-tab:hover {
   border-bottom: 5px solid #d0d0d0;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 10%;
 }
 </style>
