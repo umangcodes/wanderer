@@ -1,7 +1,16 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="nav-bar">
+      <div class="nav-tab">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="nav-tab">
+        <router-link to="/eventList">EventList</router-link>
+      </div>
+      <div class="nav-tab">
+        <router-link to="/about">About</router-link>
+      </div>
+    </div>
   </div>
   <router-view />
 </template>
@@ -56,5 +65,19 @@ body {
 
 .card-1:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-tab {
+  border-bottom: 5px solid transparent;
+  width: 100vh;
+}
+
+.nav-tab:hover {
+  border-bottom: 5px solid #d0d0d0;
 }
 </style>
