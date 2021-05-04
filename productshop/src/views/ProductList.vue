@@ -1,8 +1,12 @@
 <template>
   <div class="home">
     <div class="cards">
-      <productCard v-for="event in $store.state.events" :key="event.id" :cardName="event.title" :cardId="event.id"/>
-      
+      <productCard
+        v-for="event in $store.state.events"
+        :key="event.id"
+        :cardName="event.title"
+        :cardId="event.id"
+      />
     </div>
   </div>
   <Footer />
@@ -14,17 +18,16 @@ import productCard from '@/components/productCard.vue'
 import Footer from '../components/footer.vue'
 
 export default {
-  name: 'EventList',
+  name: 'ProductList',
   components: {
     productCard,
     Footer,
   },
-  data(){
-    return{
-      company : "SSE",
+  data() {
+    return {
+      company: 'SSE',
     }
-
-  }
+  },
 }
 </script>
 
