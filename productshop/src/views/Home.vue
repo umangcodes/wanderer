@@ -1,46 +1,23 @@
 <template>
-  <div class="home">
-    <div class="cards">
-      <productCard v-for="event in $store.state.events" :key="event.id" :cardName="event.title" :cardId="event.id"/>
-      
-    </div>
+  <div class = "home">
+    <h1>Welcome to the Product shop!</h1>
+    <h6>Currently the platform is under development. Sorry for inconvenience!!</h6>
   </div>
-  <Footer />
 </template>
 
 <script>
-// @ is an alias to /src
-import productCard from '@/components/productCard.vue'
-import Footer from '../components/footer.vue'
-
 export default {
   name: 'Home',
-  components: {
-    productCard,
-    Footer,
-  },
-  data(){
-    return{
-      company : "SSE",
-    }
-
-  }
 }
 </script>
 
 <style scoped>
-.cards {
-  display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  /* width: 500px; */
-  padding: 30px;
+.home{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+
 }
-/* .home {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-items: center;
-} */
 </style>
