@@ -1,7 +1,9 @@
 import { createStore } from 'vuex'
-
+import axios from 'axios'
 export default createStore({
   state: {
+    loadingStatus: 'notLoading',
+    products: [],
     events: [
       {
         id: 1,
@@ -38,7 +40,28 @@ export default createStore({
       },
     ],
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    UPDATE_PRODUCTS(state, products) {
+      state.products = products
+    },
+    UPDATE_LOADING_STATUS(state, loadingSts) {
+      state.loadingStatus = loadingSts
+    },
+  },
+  actions: {
+    fetchProducts(content) {
+      content.commit('UPDATE_LOADING_STATUS', 'loading')
+      axios
+        .get('http://my-json-server.typicode.com/umangcodes/wanderer/events')
+        .then((response) => {
+          content.commit('UPDATE_LOADING_STATUS', 'notLoading')
+          content.commit('UPDATE_PRODUCTS', response.data)
+          console.log(response.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+  },
   modules: {},
 })
