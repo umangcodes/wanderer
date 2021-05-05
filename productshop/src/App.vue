@@ -29,15 +29,18 @@
 
 #nav {
   padding: 30px;
+  text-decoration: none;
 }
 
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+  text-decoration: none;
 }
 body {
   background: #e2e1e0;
