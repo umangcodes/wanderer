@@ -30,14 +30,6 @@ export default {
     }
   },
   created() {
-    // axios
-    //   .get()
-    //   .then((response) => {
-    //     console.log('events:', response.data)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
     this.$store.dispatch('fetchProducts')
   },
 }
