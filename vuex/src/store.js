@@ -8,7 +8,16 @@ export default new Vuex.Store({
     user: {
       id: 'abc123',
       name: 'Umang'
-    }
+    },
+    categories: [
+      'sustainability',
+      'nature',
+      'animal welfare',
+      'housing',
+      'education',
+      'food',
+      'community'
+    ]
   },
   mutations: {},
   actions: {}
