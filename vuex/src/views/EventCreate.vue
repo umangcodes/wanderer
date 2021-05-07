@@ -7,6 +7,11 @@
       This event is created by user with id {{user.id}}
     </p>
     <p>Total catergories: {{ totalCategories }}</p>
+    <span>{{ getEvent(1).id }}</span>
+    <br>
+    <span>text: {{ getEvent(1).text }}</span>
+    <br>
+    <span>organizer:{{ getEvent(1).organizer }}</span>
     <ul>
       <li v-for="cat in categories" :key="cat">{{ cat }}</li>
     </ul>
@@ -18,7 +23,10 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     totalCategories() {
-      return this.$store.state.categories.length
+      return this.$store.getters.activeTodosCount.length
+    },
+    getEvent() {
+      return this.$store.getters.getEventById
     },
     ...mapState({
       user: 'user',
