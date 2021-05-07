@@ -15,4 +15,7 @@ export default {
   getProducts() {
     return clientApi.get('/events')
   },
+  getProduct(id) {
+    return clientApi.get('/events/' + id)
+  },
 }
