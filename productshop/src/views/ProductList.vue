@@ -6,6 +6,7 @@
         :key="event.id"
         :cardName="event.title"
         :cardId="event.id"
+        :card="event"
       />
     </div>
   </div>
