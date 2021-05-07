@@ -1,7 +1,9 @@
 <template>
-  <div class="card">
-    <h1>{{ cardName }}</h1>
-  </div>
+  <router-link :to="{ name: 'ProductDetails', params: { id: card.id } }">
+    <div class="card">
+      <h1>{{ cardName }}</h1>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -14,9 +16,17 @@ export default {
     },
     cardId: {
       type: Number,
+      required: true,
+    },
+    card: {
+      type: Object,
     },
   },
+  created() {
+    console.log(this.card.id)
+  },
 }
+// console.log(this.cardId)
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
