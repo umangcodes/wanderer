@@ -1,3 +1,20 @@
 <template>
-  <h1>Create Event, {{ $store.state.user.name }}</h1>
+  <div>
+    <h1>
+      Event by {{userName}}
+    </h1>
+  </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    userName() {
+      return this.$store.state.user.name
+    }
+  }
+}
+</script>
+
+<style scoped>
+</style>
