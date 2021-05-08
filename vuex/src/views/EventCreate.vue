@@ -23,7 +23,7 @@
           <h3>When is your event?</h3>
           <div class="field">
             <label>Date</label>
-            <datepicker v-model="event.date" placeholder="Select a date"/>
+            <Datepicker v-model="event.date" placeholder="Select a date"/>
           </div>
           <div class="field">
             <label>Select a time</label>
@@ -38,7 +38,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import Datepicker from 'vuejs-datepicker'
 export default {
+  component: {
+    Datepicker
+  },
   data() {
     const times = []
     for (let i = 1; i < 24; i++) {
@@ -53,7 +57,16 @@ export default {
   },
   methods: {
     createEvent() {
-      this.$store.dispatch('createEvent', this.event)
+      this.$store
+        .dispatch('createEvent', this.event)
+        .then(() => {
+          this.$router.push({
+            name: 'event-show',
+            params: { id: this.event.id }
+          })
+          this.event = this.createFreshUserObject
+        })
+        .catch(() => console.log('problem with creating event.'))
     },
     incrementCount() {
       this.store.dispatch('updateCount', 2)
