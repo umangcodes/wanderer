@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    count: 0,
     user: {
       id: 'abc123',
       name: 'Umang'
@@ -31,8 +32,18 @@ export default new Vuex.Store({
       { id: 4, text: '...', organizer: '...' }
     ]
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    INC_COUNT(state, value) {
+      state.count += value
+    }
+  },
+  actions: {
+    updateCount({ state, commit }, value) {
+      if (state.count != 10) {
+        commit('INC_COUNT', value)
+      }
+    }
+  },
   getters: {
     catLength: state => {
       return state.categories.length
