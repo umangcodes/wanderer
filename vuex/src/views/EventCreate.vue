@@ -21,6 +21,11 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  methods: {
+    incrementCount() {
+      this.store.dispatch('updateCount', 2)
+    }
+  },
   computed: {
     totalCategories() {
       return this.$store.getters.activeTodosCount.length
