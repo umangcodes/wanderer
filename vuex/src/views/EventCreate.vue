@@ -39,6 +39,18 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  data() {
+    const times = []
+    for (let i = 1; i < 24; i++) {
+      times.push(i + ':00')
+    }
+    return {
+      categories: this.$store.state.categories,
+      times,
+      // user: user,
+      event: this.createFreshUserObject()
+    }
+  },
   methods: {
     createEvent() {
       this.$store.dispatch('createEvent', this.event)
@@ -74,17 +86,6 @@ export default {
       user: 'user',
       categories: 'categories'
     })
-  },
-  data() {
-    const times = []
-    for (let i = 1; i < 24; i++) {
-      times.push(i + ':00')
-    }
-    return {
-      categories: this.$store.state.categories,
-      times,
-      event: this.createFreshEventObject()
-    }
   }
 }
 </script>
