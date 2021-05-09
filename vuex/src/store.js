@@ -25,12 +25,7 @@ export default new Vuex.Store({
       { id: 3, text: '...', done: true },
       { id: 4, text: '...', done: false }
     ],
-    events: [
-      { id: 1, text: '...', organizer: '...' },
-      { id: 2, text: '...', organizer: '...' },
-      { id: 3, text: '...', organizer: '...' },
-      { id: 4, text: '...', organizer: '...' }
-    ]
+    events: []
   },
   mutations: {
     INC_COUNT(state, value) {
@@ -38,6 +33,9 @@ export default new Vuex.Store({
     },
     ADD_EVENT(state, event) {
       state.event.push(event)
+    },
+    SET_EVENTS(state, events) {
+      state.events = events
     }
   },
   actions: {
@@ -50,6 +48,15 @@ export default new Vuex.Store({
       return EventService.postEvent(event).then(() =>
         commit('ADD_EVENT', event)
       )
+    },
+    fetchEvents({ commit }) {
+      EventService.getEvents()
+        .then(response => {
+          commit('SET_EVENTS', response.data)
+        })
+        .catch(error => {
+          console.log('There was an error:', error.response)
+        })
     }
   },
   getters: {
