@@ -1,15 +1,15 @@
 <template>
   <div>
     <h1>Events Listing</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
+    <EventCard v-for="event in event.events" :key="event.id" :event="event"/>
     <template v-if="page != 1">
     <router-link  :to="{ name: 'event-list', query: {page: page-1}}" rel="prev"> previous page </router-link>|
     </template>
-    <template v-if="this.totalEvents > this.page * this.perPage">
+    <template v-if="this.event.totalEvents > this.page * this.perPage">
     <router-link :to="{ name: 'event-list', query: {page: page+1}}" rel="next"> next page </router-link>
     </template>
-    <span>Current Page: {{$route.query.page}}</span>/
-    <span> {{Math.floor($store.state.totalEvents / this.perPage) + 1}}</span>
+    <span>Current Page: {{this.page}}</span>/
+    <span> {{Math.floor($store.state.event.totalEvents / this.perPage) + 1}}</span>
   </div>
 </template>
 
@@ -36,10 +36,7 @@ export default {
       return 3
     },
 
-    ...mapState({
-      events: state => state.events,
-      totalEvents: state => state.totalEvents
-    })
+    ...mapState(['event'])
   }
 }
 </script>
