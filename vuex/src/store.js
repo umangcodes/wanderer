@@ -25,49 +25,35 @@ export default new Vuex.Store({
       { id: 3, text: '...', done: true },
       { id: 4, text: '...', done: false }
     ],
-    events: []
+    events: [],
+    totalEvents: 0
   },
   mutations: {
-    INC_COUNT(state, value) {
-      state.count += value
-    },
     ADD_EVENT(state, event) {
       state.event.push(event)
     },
-    SET_EVENTS(state, events) {
-      state.events = events
+    SET_EVENTS(state, response) {
+      state.events = response.data
+      state.totalEvents = response.headers['x-total-count']
     }
   },
   actions: {
-    updateCount({ state, commit }, value) {
-      if (state.count != 10) {
-        commit('INC_COUNT', value)
-      }
-    },
     createEvent(commit, event) {
       return EventService.postEvent(event).then(() =>
         commit('ADD_EVENT', event)
       )
     },
-    fetchEvents({ commit }) {
-      EventService.getEvents()
+    fetchEvents({ state, commit }, { perPage, page }) {
+      EventService.getEvents(perPage, page)
         .then(response => {
-          commit('SET_EVENTS', response.data)
+          state.totalEvents = response.headers['x-total-count']
+          console.log(response.headers['x-total-count'])
+          commit('SET_EVENTS', response)
         })
         .catch(error => {
           console.log('There was an error:', error.response)
         })
     }
   },
-  getters: {
-    catLength: state => {
-      return state.categories.length
-    },
-    activeTodosCount: state => {
-      return state.todos.filter(todos => !todos.done)
-    },
-    getEventById: state => id => {
-      return state.events.find(event => event.id === id)
-    }
-  }
+  getters: {}
 })
