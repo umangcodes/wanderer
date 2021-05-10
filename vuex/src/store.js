@@ -26,7 +26,8 @@ export default new Vuex.Store({
       { id: 4, text: '...', done: false }
     ],
     events: [],
-    totalEvents: 0
+    totalEvents: 0,
+    event: {}
   },
   mutations: {
     ADD_EVENT(state, event) {
@@ -35,6 +36,9 @@ export default new Vuex.Store({
     SET_EVENTS(state, response) {
       state.events = response.data
       state.totalEvents = response.headers['x-total-count']
+    },
+    SET_EVENT(state, event) {
+      state.event = event
     }
   },
   actions: {
@@ -49,6 +53,16 @@ export default new Vuex.Store({
           state.totalEvents = response.headers['x-total-count']
           console.log(response.headers['x-total-count'])
           commit('SET_EVENTS', response)
+        })
+        .catch(error => {
+          console.log('There was an error:', error.response)
+        })
+    },
+    fetchEvent({ commit }, id) {
+      EventService.getEvent(id)
+        .then(response => {
+          console.log(response.data)
+          commit('SET_EVENT', response.data)
         })
         .catch(error => {
           console.log('There was an error:', error.response)
