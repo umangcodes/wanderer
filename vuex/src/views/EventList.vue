@@ -5,7 +5,9 @@
     <template v-if="page != 1">
     <router-link  :to="{ name: 'event-list', query: {page: page-1}}" rel="prev"> previous page </router-link>|
     </template>
+    <template v-if="this.totalEvents > this.page * this.perPage">
     <router-link :to="{ name: 'event-list', query: {page: page+1}}" rel="next"> next page </router-link>
+    </template>
     <span>Current Page: {{$route.query.page}}</span>/
     <span> {{Math.floor($store.state.totalEvents / this.perPage) + 1}}</span>
   </div>
@@ -24,6 +26,7 @@ export default {
       perPage: this.perPage,
       page: this.page
     })
+    console.log('total events displayed: ' + this.perPage * this.page)
   },
   computed: {
     page() {
@@ -32,8 +35,10 @@ export default {
     perPage() {
       return 3
     },
+
     ...mapState({
-      events: state => state.events
+      events: state => state.events,
+      totalEvents: state => state.totalEvents
     })
   }
 }
