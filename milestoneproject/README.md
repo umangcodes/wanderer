@@ -1,24 +1,25 @@
 # milestoneproject
 
-## Project setup
+## Scope
 ```
-npm install
+The main aim of this project is to develop a single page application using Vue-3. The page will render two views.
+
+- First view will be for a weather app which will fetch data from openweather server and display it on the page.
+- second view will be for a todo list
+
+
+both pages will have header and footer.
+
+
 ```
 
-### Compiles and hot-reloads for development
+
+### modules and dependencies used in this project
 ```
-npm run serve
+vuex
+router
+axios
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Details to follow
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
