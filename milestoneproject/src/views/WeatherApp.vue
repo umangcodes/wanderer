@@ -55,6 +55,6 @@ export default {
 }
 .weather-app {
   border: 1px solid rgba(0, 0, 0, 0.5);
-  height: 100vh;
+  height: 450px;
 }
 </style>
