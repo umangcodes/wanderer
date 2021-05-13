@@ -10,9 +10,10 @@
               placeholder="Search Location"
               class="search-bar"
               v-model="query"
-            />{{ query }}
+            />
           </form>
         </div>
+        <weatherAppDisplay :weatherData="wdata" />
       </div>
     </div>
     <HomeButton />
@@ -21,21 +22,30 @@
 
 <script>
 import HomeButton from "@/components/buttons/HomeButton.vue";
-
+import WeatherAppDisplay from "@/components/panels/weatherAppDisplay.vue";
+import weatherService from "@/services/weatherService";
 export default {
   name: "Home",
   components: {
     HomeButton,
+    WeatherAppDisplay,
   },
   data() {
     return {
-      query: "",
+      query: "toronto",
+      wdata: {},
     };
   },
   methods: {
     SaveQuery() {
       this.$store.state.location = this.query;
       console.log(this.$store.state.location);
+      //  TODO: instead of storing the data to the state directly use an store action. mapaction to a local computed property
+      this.wdata = weatherService.getWeather(
+        this.$store.state.baseUrl,
+        this.query,
+        this.$store.state.apiKey
+      );
     },
   },
 };
