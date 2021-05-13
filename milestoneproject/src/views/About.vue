@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="page">
+    <div>About page</div>
+    <HomeButton />
   </div>
 </template>
+
+<script>
+import HomeButton from "@/components/buttons/HomeButton.vue";
+export default {
+  components: {
+    HomeButton,
+  },
+};
+</script>
