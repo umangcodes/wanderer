@@ -13,12 +13,14 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
+  padding: 20px;
+  height: 80px;
+  text-align: center;
 }
 
 #nav a {
@@ -36,5 +38,7 @@
   background-color: rgba(0, 204, 153, 0.9);
   color: rgba(255, 255, 255, 0.95);
   font-family: cursive;
+  padding: 10px;
+  margin: 10px;
 }
 </style>
