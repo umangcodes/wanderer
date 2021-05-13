@@ -6,7 +6,7 @@
 .float {
   position: fixed;
   width: 60px;
-  height: 15px;
+  height: Auto;
   bottom: 10px;
   right: 20px;
   background-color: rgba(0, 204, 153, 1);
@@ -26,7 +26,7 @@
 }
 
 .home {
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
 }
 </style>
