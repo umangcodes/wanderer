@@ -4,7 +4,14 @@
       <h1>Weather App View</h1>
       <div class="weather-app">
         <div class="search">
-          <input type="text" placeholder="Search Location" class="search-bar" />
+          <form @submit.prevent="SaveQuery">
+            <input
+              type="text"
+              placeholder="Search Location"
+              class="search-bar"
+              v-model="query"
+            />{{ query }}
+          </form>
         </div>
       </div>
     </div>
@@ -19,6 +26,17 @@ export default {
   name: "Home",
   components: {
     HomeButton,
+  },
+  data() {
+    return {
+      query: "",
+    };
+  },
+  methods: {
+    SaveQuery() {
+      this.$store.state.location = this.query;
+      console.log(this.$store.state.location);
+    },
   },
 };
 </script>
