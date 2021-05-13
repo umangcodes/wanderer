@@ -46,6 +46,8 @@ export default {
         this.query,
         this.$store.state.apiKey
       );
+
+      console.log(this.wdata);
     },
   },
 };
