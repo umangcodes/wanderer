@@ -1,8 +1,8 @@
 <template>
-  <div class="main-panel">
-    <div class="location">{{ weatherData.name }}</div>
-    <div class="temperature">{{ weatherData.name }}</div>
-    <div class="condition">{{ weatherData.name }}</div>
+  <div class="main-panel" v-if="typeof weatherData.main != 'undefined'">
+    <div class="location">{{ weatherData.name }} {{}}</div>
+    <div class="temperature">{{ weatherData.main.temp }}</div>
+    <div class="condition">{{ weatherData.weather[0].main }}</div>
     <img :src="image" :alt="condition" />
   </div>
 </template>
@@ -22,7 +22,9 @@ export default {
   },
   methods: {
     image() {
-      return "@/assets/cold-bg.svg";
+      if (this.weatherData.weather[0].main == "clear") {
+        return "src/assets/sunny-bg.svg";
+      }
     },
   },
 };
