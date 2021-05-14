@@ -18,12 +18,13 @@ export default {
   data() {
     return {
       condition: "conditionImage",
+      image: this.getImage,
     };
   },
   methods: {
-    image() {
+    getImage() {
       if (this.weatherData.weather[0].main == "clear") {
-        return "src/assets/sunny-bg.svg";
+        return "@/src/assets/logo.png";
       }
     },
   },

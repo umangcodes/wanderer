@@ -68,13 +68,13 @@ export default {
   justify-content: center;
   width: 200px;
   height: 30px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 0px 5px;
   padding: 5px;
   margin: 20px;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.95);
   box-shadow: none;
   font-style: italic;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.25);
@@ -89,7 +89,7 @@ export default {
   font-style: italic;
 }
 .weather-app {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  height: 450px;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  height: 100vh;
 }
 </style>
