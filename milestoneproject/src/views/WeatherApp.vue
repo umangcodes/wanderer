@@ -23,7 +23,7 @@
 <script>
 import HomeButton from "@/components/buttons/HomeButton.vue";
 import WeatherAppDisplay from "@/components/panels/weatherAppDisplay.vue";
-import weatherService from "@/services/weatherService";
+import weatherService from "@/services/weatherService.js";
 export default {
   name: "Home",
   components: {
@@ -41,11 +41,16 @@ export default {
       this.$store.state.location = this.query;
       console.log(this.$store.state.location);
       //  TODO: instead of storing the data to the state directly use an store action. mapaction to a local computed property
-      this.wdata = weatherService.getWeather(
-        this.$store.state.baseUrl,
-        this.query,
-        this.$store.state.apiKey
-      );
+      weatherService
+        .getWeather(
+          this.$store.state.baseUrl,
+          this.query,
+          this.$store.state.apiKey
+        )
+        .then((response) => {
+          console.log("promise" + response);
+          this.wdata = response;
+        });
 
       console.log(this.wdata);
     },
