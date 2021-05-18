@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="home">
-      <h1>Weather App View</h1>
+      <h1 class="app-title">Weather App View</h1>
       <div class="weather-app">
         <div class="search">
           <form @submit.prevent="SaveQuery">
@@ -54,6 +54,19 @@ export default {
 
       console.log(this.wdata);
     },
+    created() {
+      weatherService
+        .getWeather(
+          this.$store.state.baseUrl,
+          this.query,
+          this.$store.state.apiKey
+        )
+        .then((response) => {
+          console.log("promise" + response);
+          this.wdata = response;
+        });
+      console.log(this.wdata);
+    },
   },
 };
 </script>
@@ -68,28 +81,32 @@ export default {
   justify-content: center;
   width: 200px;
   height: 30px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  border-radius: 0px 5px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   padding: 5px;
   margin: 20px;
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(41, 41, 41, 1);
   box-shadow: none;
   font-style: italic;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .search-bar:focus {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  border-radius: 15px 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   outline: none;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.5);
-  font-style: italic;
+  font-style: italic bold;
+  transform: scale(1.01);
 }
 .weather-app {
   /* border: 1px solid rgba(0, 0, 0, 0.5); */
   height: 100vh;
+}
+.app-title {
+  text-align: center;
 }
 </style>
