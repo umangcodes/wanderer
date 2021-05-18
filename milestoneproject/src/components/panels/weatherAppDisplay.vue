@@ -5,7 +5,17 @@
     </div>
     <div class="temperature">{{ Math.floor(weatherData.main.temp) }} °C</div>
     <div class="condition">{{ weatherData.weather[0].main }}</div>
-    <img class="image" src="@/assets/sunny-bg.svg" :alt="condition" />
+    <div>
+      <img
+        v-for="image in images"
+        :key="image.id"
+        v-show="image.alt == weatherData.weather[0].main"
+        class="image"
+        :src="image.url"
+        :alt="image.alt"
+      />
+      <!-- <img src="@/assets/logo.png" alt="logo" /> -->
+    </div>
   </div>
 </template>
 
@@ -20,15 +30,18 @@ export default {
   data() {
     return {
       condition: "conditionImage",
+      images: [
+        { id: 1, url: require("@/assets/cold-bg.svg"), alt: "Cold" },
+        { id: 2, url: require("@/assets/rain-bg.svg"), alt: "Rain" },
+        { id: 3, url: require("@/assets/storm-bg.svg"), alt: "Clouds" },
+        { id: 4, url: require("@/assets/sunny-bg.svg"), alt: "Clear" },
+        { id: 5, url: require("@/assets/windy-bg.svg"), alt: "Windy" },
+      ],
     };
-  },
-  computed: {
-    getImage: function () {
-      return "@/assets/sunny-bg.svg";
-    },
   },
   created() {
     console.log(this.getImage);
+    console.log(this.image);
   },
 };
 </script>
