@@ -14,6 +14,9 @@
           </form>
         </div>
         <weatherAppDisplay :weatherData="wdata" />
+        <h1 style="text-align: center" v-show="!display">
+          Please enter a location or Press enter!
+        </h1>
       </div>
     </div>
     <HomeButton />
@@ -34,6 +37,7 @@ export default {
     return {
       query: "toronto",
       wdata: {},
+      display: false,
     };
   },
   methods: {
@@ -51,21 +55,8 @@ export default {
           console.log("promise" + response);
           this.wdata = response;
         });
-
-      console.log(this.wdata);
-    },
-    activated() {
-      weatherService
-        .getWeather(
-          this.$store.state.baseUrl,
-          this.query,
-          this.$store.state.apiKey
-        )
-        .then((response) => {
-          console.log("promise" + response);
-          this.wdata = response;
-        });
-      console.log(this.wdata);
+      this.display = true;
+    //   console.log(this.wdata);
     },
   },
 };
