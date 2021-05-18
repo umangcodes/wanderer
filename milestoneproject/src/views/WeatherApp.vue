@@ -54,7 +54,7 @@ export default {
 
       console.log(this.wdata);
     },
-    created() {
+    activated() {
       weatherService
         .getWeather(
           this.$store.state.baseUrl,
