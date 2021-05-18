@@ -5,9 +5,19 @@
     <router-link :to="{ name: 'ToDo' }">Tasks List</router-link> |
     <router-link :to="{ name: 'About' }">About</router-link>
   </div>
+
   <router-view />
+  <Footer />
 </template>
 
+<script>
+import Footer from "@/components/bars/footer.vue";
+export default {
+  components: {
+    Footer,
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
