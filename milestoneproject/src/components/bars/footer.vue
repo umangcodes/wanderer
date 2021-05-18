@@ -25,6 +25,5 @@ export default {};
 .link {
   color: white;
   text-decoration: none;
-  
 }
 </style>
