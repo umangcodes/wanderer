@@ -35,9 +35,9 @@
 
 .page {
   border: 2px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(0, 204, 153, 0.9);
-  color: rgba(255, 255, 255, 0.95);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgba(41, 41, 41, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 10px;
   margin: 10px;
 }
