@@ -1,7 +1,7 @@
 <template>
   <div class="to-do-app">
     <form @submit.prevent="formSubmit">
-      <div>
+      <div class="task">
         <h3>Task</h3>
         <input
           type="text"
@@ -10,7 +10,7 @@
         />
         {{ task }}
       </div>
-      <div>
+      <div class="task category">
         <h3>Category</h3>
         <select name="category" v-model="category">
           <option value="cat-1">Cat 1</option>
@@ -20,7 +20,7 @@
         </select>
         <span>{{ category }}</span>
       </div>
-      <div>
+      <div class="task description">
         <h3>Description</h3>
         <input
           type="text"
@@ -61,6 +61,16 @@ export default {
 
 <style scoped>
 .to-do-app {
+  width: 500px;
+  height: auto;
+  border: 2px solid white;
   color: white;
+  padding: 10px;
+  padding-top: 0px;
+  margin: 10px;
+}
+.task {
+  font-family: "Segoe UI";
+  font-size: 20px;
 }
 </style>
