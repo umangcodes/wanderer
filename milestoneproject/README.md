@@ -23,4 +23,30 @@ router
 axios
 ```
 
-### Details to follow
+### View 1: Home Page
+
+```
+Simple home page where all other home buttons redirects.
+```
+
+### View 2: Weather application
+
+```
+This application take input from user and uses the input for api call. The application uses openweather api for fetching the data.
+
+The application uses vuex for state management.
+
+Major issue: webpack issue with image binding resolved by 'require' the image files during compilation.
+```
+
+### View 3: Todo application
+
+```
+In progress
+```
+
+### View 4: About
+
+```
+Update in next version...
+```
