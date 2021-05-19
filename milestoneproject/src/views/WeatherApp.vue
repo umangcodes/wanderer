@@ -13,8 +13,8 @@
             />
           </form>
         </div>
-        <weatherAppDisplay :weatherData="wdata" />
-        <h1 style="text-align: center" v-show="!display">
+        <weatherAppDisplay :weatherData="$store.state.weather" />
+        <h1 style="text-align: center" v-show="!$store.state.display">
           Please enter a location or Press enter!
         </h1>
       </div>
@@ -26,7 +26,6 @@
 <script>
 import HomeButton from "@/components/buttons/HomeButton.vue";
 import WeatherAppDisplay from "@/components/panels/weatherAppDisplay.vue";
-import weatherService from "@/services/weatherService.js";
 export default {
   name: "Home",
   components: {
@@ -37,27 +36,20 @@ export default {
     return {
       query: "toronto",
       wdata: {},
-      display: false,
+      display: this.$store.state.display,
     };
   },
   methods: {
     SaveQuery() {
-      this.$store.state.location = this.query;
-      console.log(this.$store.state.location);
-      //  TODO: instead of storing the data to the state directly use an store action. mapaction to a local computed property
-      weatherService
-        .getWeather(
-          this.$store.state.baseUrl,
-          this.query,
-          this.$store.state.apiKey
-        )
-        .then((response) => {
-          console.log("promise" + response);
-          this.wdata = response;
-        });
-      this.display = true;
-    //   console.log(this.wdata);
+      this.$store.dispatch("weatherUpdate", this.query);
     },
+  },
+  mounted() {
+    console.log("component mounted");
+    console.log(this.display);
+  },
+  updated() {
+    console.log(this.display);
   },
 };
 </script>
