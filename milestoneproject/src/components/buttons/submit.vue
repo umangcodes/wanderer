@@ -16,10 +16,11 @@ export default {
 
 <style scoped>
 .submit-button {
-  width: 100px;
-  height: 40px;
+  display: flex;
 
   color: white;
   font-style: italic;
+  justify-content: center;
+  margin-top: 20px;
 }
 </style>
