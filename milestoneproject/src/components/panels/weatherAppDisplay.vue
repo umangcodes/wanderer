@@ -39,10 +39,6 @@ export default {
       ],
     };
   },
-  created() {
-    console.log(this.getImage);
-    console.log(this.image);
-  },
 };
 </script>
 
