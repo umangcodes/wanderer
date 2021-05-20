@@ -2,7 +2,7 @@
   <div class="to-do-app">
     <div class="toggle-button">
       <CustomButton
-        label="X"
+        :label="toggleSymbol"
         emitEvent="closePanel"
         @closePanel="toggleAddTaskPanel"
       />
@@ -48,11 +48,6 @@
           {{ description }}
         </div>
         <Submit :submitPressed="formSubmit" />
-        <CustomButton
-          label="Button 1"
-          emitEvent="button1"
-          :button1="buttonPressed"
-        />
       </form>
     </div>
     <div v-if="toggleTaskPanel == false">
@@ -77,6 +72,7 @@ export default {
       category: "",
       remind: "",
       toggleTaskPanel: false,
+      toggleSymbol: "+",
     };
   },
   methods: {
@@ -90,6 +86,11 @@ export default {
     toggleAddTaskPanel() {
       this.toggleTaskPanel = !this.toggleTaskPanel;
       console.log(this.toggleTaskPanel);
+      if (this.toggleTaskPanel == true) {
+        this.toggleSymbol = "X";
+      } else if (this.toggleTaskPanel != true) {
+        this.toggleSymbol = "+";
+      }
     },
   },
 };
