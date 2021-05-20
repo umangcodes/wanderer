@@ -113,7 +113,6 @@ export default {
   padding-top: 0px;
   margin: 10px;
 }
-
 .task {
   font-family: "Segoe UI";
   font-size: 20px;
