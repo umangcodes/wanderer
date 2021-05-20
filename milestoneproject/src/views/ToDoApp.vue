@@ -16,3 +16,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.page {
+  height: auto;
+  min-height: 500px;
+}
+</style>
