@@ -7,6 +7,10 @@ export default createStore({
     baseUrl: "https://api.openweathermap.org/data/2.5/",
     weather: {},
     display: false,
+    task: "",
+    description: "",
+    category: "",
+    remind: "",
   },
   mutations: {
     UPDATE_DATA(state, data) {
@@ -14,6 +18,25 @@ export default createStore({
     },
     UPDATE_DISPLAY(state) {
       state.display = true;
+    },
+    SET_TASK(state, task) {
+      state.task = task;
+    },
+    SET_DESCRIPTION(state, description) {
+      state.description = description;
+    },
+    SET_CAT(state, category) {
+      state.category = category;
+    },
+    SET_REMIND(state, remind) {
+      state.remind = remind;
+    },
+    userInput({ commit }, task, desc, cat, remind) {
+      commit("SET_TASK", task);
+      commit("SET_DESCRIPTION", desc);
+      commit("SET_CAT", cat);
+      commit("SET_REMIND", remind);
+      console.log("action-userInput");
     },
   },
   actions: {
