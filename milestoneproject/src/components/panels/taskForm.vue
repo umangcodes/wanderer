@@ -48,6 +48,7 @@
           {{ description }}
         </div>
         <Submit :submitPressed="formSubmit" />
+        {{ $store.state.task }}
       </form>
     </div>
     <div v-if="toggleTaskPanel == false">
@@ -77,8 +78,13 @@ export default {
   },
   methods: {
     formSubmit() {
-      console.log(this.category);
-      console.log(this.remind);
+      this.$store.dispatch(
+        "userInput",
+        this.task,
+        this.description,
+        this.category,
+        this.remind
+      );
     },
     buttonPressed() {
       console.log("Button is pressed");
