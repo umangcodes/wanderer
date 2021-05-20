@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button v-on:click.prevent="buttonPress(emitEvent)">{{ label }}</button>
+    <button class="button" v-on:click.prevent="buttonPress(emitEvent)">
+      {{ label }}
+    </button>
   </div>
 </template>
 
@@ -27,4 +29,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.button {
+  cursor: pointer;
+}
+</style>
