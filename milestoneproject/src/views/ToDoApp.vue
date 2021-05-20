@@ -3,9 +3,7 @@
     <h1>Todo list</h1>
     <HomeButton />
     <TaskForm />
-    <div class="task-display" :class="remind ? 'highlight' : ''">
-      <ListTasks />
-    </div>
+    <ListTasks :tasks="tasks" />
   </div>
 </template>
 
@@ -22,7 +20,30 @@ export default {
   data() {
     return {
       remind: true,
+      tasks: [],
     };
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: "random stuff 1",
+        day: "today?",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "random stuff 2",
+        day: "today??",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "random stuff 3",
+        day: "today???",
+        reminder: false,
+      },
+    ];
   },
 };
 </script>
@@ -31,15 +52,5 @@ export default {
 .page {
   height: auto;
   min-height: 500px;
-}
-.task-display {
-  border: 1px solid white;
-  width: 100vh;
-  padding-left: 30px;
-  margin: 10px;
-  border-radius: 20px;
-}
-.highlight {
-  border-left: 5px solid green;
 }
 </style>
