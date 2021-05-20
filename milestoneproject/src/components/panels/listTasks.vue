@@ -1,15 +1,12 @@
 <template>
-    <div>
-
-    </div>
+  <div class="task">
+    <h3>task name</h3>
+    <p>task description</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style scoped></style>
