@@ -1,0 +1,5 @@
+to bind class using ternary operator and to make sure we have something in default, use the following syntax
+
+
+
+:class="[condition ? 'style1' : 'style2', 'default-style']"
