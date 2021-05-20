@@ -31,13 +31,6 @@ export default createStore({
     SET_REMIND(state, remind) {
       state.remind = remind;
     },
-    userInput({ commit }, task, desc, cat, remind) {
-      commit("SET_TASK", task);
-      commit("SET_DESCRIPTION", desc);
-      commit("SET_CAT", cat);
-      commit("SET_REMIND", remind);
-      console.log("action-userInput");
-    },
   },
   actions: {
     weatherUpdate({ state, commit }, query) {
@@ -52,6 +45,13 @@ export default createStore({
           console.log("updatedisplay");
           console.log(state.display);
         });
+    },
+    userInput({ commit }, task, desc, cat, remind) {
+      commit("SET_TASK", task);
+      commit("SET_DESCRIPTION", desc);
+      commit("SET_CAT", cat);
+      commit("SET_REMIND", remind);
+      console.log("action-userInput");
     },
   },
   modules: {},
