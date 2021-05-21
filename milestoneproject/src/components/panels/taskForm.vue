@@ -14,9 +14,9 @@
           <input
             type="text"
             placeholder="Please enter task name"
-            v-model="task"
+            v-model="taskName"
           />
-          {{ task }}
+          {{ taskName }}
         </div>
         <div class="task category">
           <h3>Category</h3>
@@ -68,7 +68,7 @@ export default {
   },
   data() {
     return {
-      task: "",
+      taskName: "",
       description: "",
       category: "",
       remind: "",
@@ -78,13 +78,7 @@ export default {
   },
   methods: {
     formSubmit() {
-      this.$store.dispatch(
-        "userInput",
-        this.task,
-        this.description,
-        this.category,
-        this.remind
-      );
+      this.$store.dispatch("userInput", this.computedTask);
     },
     buttonPressed() {
       console.log("Button is pressed");
@@ -97,6 +91,16 @@ export default {
       } else if (this.toggleTaskPanel != true) {
         this.toggleSymbol = "+";
       }
+    },
+  },
+  computed: {
+    computedTask() {
+      return {
+        id: Math.floor(Math.random() * 100000),
+        text: this.taskName,
+        day: "NA",
+        reminder: this.remind,
+      };
     },
   },
 };
