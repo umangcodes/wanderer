@@ -1,5 +1,5 @@
 <template>
-  <div class="task" v-for="task in tasks" :key="task.id">
+  <div class="task" v-for="task in displayTasks" :key="task.id">
     <div class="task-display" :class="task.reminder ? 'highlight' : ''">
       <div class="text-box">
         <h3>{{ task.text }}</h3>
@@ -27,9 +27,14 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      displayTasks: this.tasks,
+    };
+  },
   methods: {
     closeClicked(id) {
-      console.log(id);
+      this.displayTasks = this.displayTasks.filter((task) => task.id != id);
     },
   },
 };
