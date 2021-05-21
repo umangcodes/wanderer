@@ -1,6 +1,10 @@
 <template>
   <div class="task" v-for="task in displayTasks" :key="task.id">
-    <div class="task-display" :class="task.reminder ? 'highlight' : ''">
+    <div
+      @dblclick="remindOff(task.id)"
+      class="task-display"
+      :class="task.reminder ? 'highlight' : ''"
+    >
       <div class="text-box">
         <h3>{{ task.text }}</h3>
         <p>{{ task.day }}</p>
@@ -35,9 +39,16 @@ export default {
   methods: {
     closeClicked(id) {
       this.displayTasks = this.displayTasks.filter((task) => task.id != id);
-      this.$store.dispatch("updateTasks", this.displayTasks);
+      this.$store.dispatch("addTask", this.displayTasks);
       console.log(this.displayTasks);
       console.log(this.$store.state.tasks);
+    },
+    remindOff(id) {
+      let temp = this.displayTasks.find((task) => task.id == id);
+      temp.reminder = !temp.reminder;
+      this.displayTasks = this.displayTasks.filter((task) => task.id != id);
+      this.$store.dispatch("updateTasks", this.displayTasks);
+      this.$store.dispatch("addTask", temp);
     },
   },
   created() {
