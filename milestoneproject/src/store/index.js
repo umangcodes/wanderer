@@ -56,7 +56,7 @@ export default createStore({
           console.log(state.display);
         });
     },
-    userInput({ state, commit }, task) {
+    addTask({ state, commit }, task) {
       commit("ADD_TASK", task);
       console.log(state.tasks);
     },
