@@ -43,12 +43,19 @@ export default {
       console.log(this.displayTasks);
       console.log(this.$store.state.tasks);
     },
+    // deprecated method....for future reference to remind me of my stupidity! :P
+    // remindOff(id) {
+    //   let temp = this.displayTasks.find((task) => task.id == id);
+    //   temp.reminder = !temp.reminder;
+    //   this.displayTasks = this.displayTasks.filter((task) => task.id != id);
+    //   this.$store.dispatch("updateTasks", this.displayTasks);
+    //   this.$store.dispatch("addTask", temp);
+    // },
     remindOff(id) {
-      let temp = this.displayTasks.find((task) => task.id == id);
-      temp.reminder = !temp.reminder;
-      this.displayTasks = this.displayTasks.filter((task) => task.id != id);
+      this.displayTasks = this.displayTasks.map((task) =>
+        task.id == id ? { ...task, reminder: !task.reminder } : task
+      );
       this.$store.dispatch("updateTasks", this.displayTasks);
-      this.$store.dispatch("addTask", temp);
     },
   },
   created() {
