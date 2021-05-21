@@ -64,8 +64,6 @@ export default {
       this.$store.dispatch("updateTasks", response);
     });
     this.displayTasks = this.$store.state.tasks;
-    console.log("displayTasks");
-    console.log(this.displayTasks);
   },
 };
 </script>
