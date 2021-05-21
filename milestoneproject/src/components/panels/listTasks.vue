@@ -21,6 +21,7 @@
 
 <script>
 import CustomButton from "@/components/buttons/customButton.vue";
+import taskService from "@/services/taskService.js";
 export default {
   components: {
     CustomButton,
@@ -58,8 +59,13 @@ export default {
       this.$store.dispatch("updateTasks", this.displayTasks);
     },
   },
-  created() {
+  async created() {
+    await taskService.getTasks().then((response) => {
+      this.$store.dispatch("updateTasks", response);
+    });
     this.displayTasks = this.$store.state.tasks;
+    console.log("displayTasks");
+    console.log(this.displayTasks);
   },
 };
 </script>
