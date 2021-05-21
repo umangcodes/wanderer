@@ -72,6 +72,8 @@ export default {
   padding-left: 30px;
   margin: 10px;
   border-radius: 20px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
 }
 .highlight {
   border-left: 5px solid green;
