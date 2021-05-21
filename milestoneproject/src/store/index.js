@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import weatherService from "@/services/weatherService";
+
 export default createStore({
   state: {
     location: "london",
@@ -7,26 +8,7 @@ export default createStore({
     baseUrl: "https://api.openweathermap.org/data/2.5/",
     weather: {},
     display: false,
-    tasks: [
-      {
-        id: 1,
-        text: "random stuff 1",
-        day: "today?",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "random stuff 2",
-        day: "today??",
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: "random stuff 3",
-        day: "today???",
-        reminder: false,
-      },
-    ],
+    tasks: [],
   },
   mutations: {
     UPDATE_DATA(state, data) {
