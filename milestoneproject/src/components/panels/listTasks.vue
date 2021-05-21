@@ -29,13 +29,19 @@ export default {
   },
   data() {
     return {
-      displayTasks: this.tasks,
+      displayTasks: [],
     };
   },
   methods: {
     closeClicked(id) {
       this.displayTasks = this.displayTasks.filter((task) => task.id != id);
+      this.$store.dispatch("updateTasks", this.displayTasks);
+      console.log(this.displayTasks);
+      console.log(this.$store.state.tasks);
     },
+  },
+  created() {
+    this.displayTasks = this.$store.state.tasks;
   },
 };
 </script>
