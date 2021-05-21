@@ -7,10 +7,26 @@ export default createStore({
     baseUrl: "https://api.openweathermap.org/data/2.5/",
     weather: {},
     display: false,
-    task: "",
-    description: "",
-    category: "",
-    remind: "",
+    tasks: [
+      {
+        id: 1,
+        text: "random stuff 1",
+        day: "today?",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "random stuff 2",
+        day: "today??",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "random stuff 3",
+        day: "today???",
+        reminder: false,
+      },
+    ],
   },
   mutations: {
     UPDATE_DATA(state, data) {
@@ -19,17 +35,8 @@ export default createStore({
     UPDATE_DISPLAY(state) {
       state.display = true;
     },
-    SET_TASK(state, task) {
-      state.task = task;
-    },
-    SET_DESCRIPTION(state, description) {
-      state.description = description;
-    },
-    SET_CAT(state, category) {
-      state.category = category;
-    },
-    SET_REMIND(state, remind) {
-      state.remind = remind;
+    ADD_TASK(state, task) {
+      state.tasks.push(task);
     },
   },
   actions: {
@@ -46,12 +53,9 @@ export default createStore({
           console.log(state.display);
         });
     },
-    userInput({ commit }, task, desc, cat, remind) {
-      commit("SET_TASK", task);
-      commit("SET_DESCRIPTION", desc);
-      commit("SET_CAT", cat);
-      commit("SET_REMIND", remind);
-      console.log("action-userInput");
+    userInput({ state, commit }, task) {
+      commit("ADD_TASK", task);
+      console.log(state.tasks);
     },
   },
   modules: {},
