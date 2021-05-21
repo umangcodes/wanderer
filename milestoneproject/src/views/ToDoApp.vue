@@ -20,30 +20,8 @@ export default {
   data() {
     return {
       remind: true,
-      tasks: [],
+      tasks: this.$store.state.tasks,
     };
-  },
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        text: "random stuff 1",
-        day: "today?",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "random stuff 2",
-        day: "today??",
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: "random stuff 3",
-        day: "today???",
-        reminder: false,
-      },
-    ];
   },
 };
 </script>
