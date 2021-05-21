@@ -38,6 +38,9 @@ export default createStore({
     ADD_TASK(state, task) {
       state.tasks.push(task);
     },
+    UPDATE_TASKS(state, data) {
+      state.tasks = data;
+    },
   },
   actions: {
     weatherUpdate({ state, commit }, query) {
@@ -56,6 +59,9 @@ export default createStore({
     userInput({ state, commit }, task) {
       commit("ADD_TASK", task);
       console.log(state.tasks);
+    },
+    updateTasks({ commit }, data) {
+      commit("UPDATE_TASKS", data);
     },
   },
   modules: {},
