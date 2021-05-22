@@ -11,4 +11,20 @@ export default {
     console.log(data);
     return data;
   },
+  async postTask(task) {
+    const res = await fetch("api/tasks", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(task),
+    });
+    const data = await res.json();
+    return data;
+  },
+  async deleteTask(id) {
+    await fetch(`api/tasks/${id}`, {
+      method: "DELETE",
+    });
+  },
 };
