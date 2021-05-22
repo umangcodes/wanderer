@@ -53,9 +53,14 @@ export default {
     //   this.$store.dispatch("updateTasks", this.displayTasks);
     //   this.$store.dispatch("addTask", temp);
     // },
-    remindOff(id) {
+    async remindOff(id) {
+      console.log(id);
+      const task = await taskService.getTask(id);
+      console.log(task);
+      const toggleReminder = { ...task, reminder: !task.reminder };
+      const res = await taskService.updateTask(id, toggleReminder);
       this.displayTasks = this.displayTasks.map((task) =>
-        task.id == id ? { ...task, reminder: !task.reminder } : task
+        task.id == id ? { ...task, reminder: res.reminder } : task
       );
       this.$store.dispatch("updateTasks", this.displayTasks);
     },
@@ -66,12 +71,12 @@ export default {
     });
     this.displayTasks = this.$store.state.tasks;
   },
-  async updated() {
-    await taskService.getTasks().then((response) => {
-      this.$store.dispatch("updateTasks", response);
-    });
-    this.displayTasks = this.$store.state.tasks;
-  },
+  // async updated() {
+  //   await taskService.getTasks().then((response) => {
+  //     this.$store.dispatch("updateTasks", response);
+  //   });
+  //   this.displayTasks = this.$store.state.tasks;
+  // },
 };
 </script>
 
