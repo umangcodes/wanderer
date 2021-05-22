@@ -15,8 +15,8 @@ export default {};
 .footer {
   width: auto;
   height: 75px;
-  background-color: rgba(41, 41, 41, 1);
-  color: rgba(255, 255, 255, 1);
+  background-color: rgba(249, 249, 249, 1);
+  color: rgba(13, 27 30, 1);
   justify-content: space-around;
   align-self: center;
   text-align: center;
@@ -28,19 +28,22 @@ export default {};
 
   padding: 5px;
   margin: 10px;
-  border: 3px solid rgba(0, 0, 0, 0.75);
+  border: 2px solid rgba(28, 35, 33, 0.5);
   border-radius: 50px;
 }
 
 .link {
   font-size: 18px;
   text-decoration: none;
-  color: white;
+  color: rgba(13, 27 30, 1);
   font-style: normal;
 }
 .link:hover {
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   transition: 0.4s;
   font-style: italic;
+}
+.link:visited {
+  text-decoration: none;
+  color: rgba(13, 27 30, 1);
 }
 </style>
