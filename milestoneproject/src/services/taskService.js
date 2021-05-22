@@ -1,6 +1,12 @@
 export default {
   async getTasks() {
-    const response = await fetch("http://localhost:3000/tasks/");
+    const response = await fetch("api/tasks/");
+    const data = await response.json();
+    console.log(data);
+    return data;
+  },
+  async getTask(id) {
+    const response = await fetch(`api/tasks/${id}`);
     const data = await response.json();
     console.log(data);
     return data;
