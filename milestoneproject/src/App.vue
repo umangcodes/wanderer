@@ -44,12 +44,12 @@ export default {
 }
 
 .page {
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(41, 41, 41, 1);
-  color: rgba(255, 255, 255, 1);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 10px;
-  margin: 10px;
+  border: 2px solid rgba(28, 35, 33, 0.5);
+  background-color: rgba(249, 249, 249, 1);
+  color: rgba(13, 27 30, 1);
+  font-family: "Segoe UI";
+  /* padding: 10px;
+  margin: 10px; */
   height: 100vh;
 }
 </style>
