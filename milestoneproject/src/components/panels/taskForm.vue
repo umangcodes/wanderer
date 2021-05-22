@@ -60,6 +60,7 @@
 <script>
 import Submit from "@/components/buttons/submit.vue";
 import CustomButton from "@/components/buttons/customButton.vue";
+import taskService from "@/services/taskService.js";
 export default {
   name: "taskForm",
   components: {
@@ -88,16 +89,7 @@ export default {
       };
       // console.log(newTask);
       // console.log(typeof newTask);
-
-      const res = await fetch("api/tasks", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(newTask),
-      });
-
-      const data = await res.json();
+      const data = await taskService.postTask(newTask);
       this.$store.dispatch("updateTasks", data);
       console.log(data);
     },
