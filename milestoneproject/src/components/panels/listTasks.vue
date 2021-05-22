@@ -84,15 +84,15 @@ export default {
 .task-display {
   display: flex;
   border: 1px solid white;
-  width: 100vh;
+  width: 500px;
   padding-left: 30px;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 0px 20px 20px 0px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
 }
 .highlight {
-  border-left: 5px solid green;
+  border-left: 20px solid green;
 }
 .text-box {
   width: 500px;
