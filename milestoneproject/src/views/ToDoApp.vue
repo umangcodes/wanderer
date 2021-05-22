@@ -23,6 +23,8 @@ export default {
       tasks: this.$store.state.tasks,
     };
   },
+  
+
 };
 </script>
 
