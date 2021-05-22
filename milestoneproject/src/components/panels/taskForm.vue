@@ -74,11 +74,32 @@ export default {
       remind: "",
       toggleTaskPanel: false,
       toggleSymbol: "+",
+      randomId: Math.floor(Math.random() * 1000000),
     };
   },
   methods: {
-    formSubmit() {
-      this.$store.dispatch("userInput", this.computedTask);
+    async formSubmit() {
+      const newTask = {
+        id: this.randomId,
+        text: this.taskName,
+        description: this.description,
+        reminder: this.remind,
+        enumerable: true,
+      };
+      // console.log(newTask);
+      // console.log(typeof newTask);
+
+      const res = await fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(newTask),
+      });
+
+      const data = await res.json();
+      this.$store.dispatch("updateTasks", data);
+      console.log(data);
     },
     buttonPressed() {
       console.log("Button is pressed");
@@ -94,14 +115,14 @@ export default {
     },
   },
   computed: {
-    computedTask() {
-      return {
-        id: Math.floor(Math.random() * 100000),
-        text: this.taskName,
-        day: "NA",
-        reminder: this.remind,
-      };
-    },
+    // computedTask() {
+    //   return (newTask = {
+    //     id: this.randomId,
+    //     taskName: this.taskName,
+    //     description: this.description,
+    //     reminder: this.remind,
+    //   });
+    // },
   },
 };
 </script>
