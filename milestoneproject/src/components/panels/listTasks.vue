@@ -38,7 +38,8 @@ export default {
     };
   },
   methods: {
-    closeClicked(id) {
+    async closeClicked(id) {
+      await taskService.deleteTask(id);
       this.displayTasks = this.displayTasks.filter((task) => task.id != id);
       this.$store.dispatch("addTask", this.displayTasks);
       console.log(this.displayTasks);
@@ -60,6 +61,12 @@ export default {
     },
   },
   async created() {
+    await taskService.getTasks().then((response) => {
+      this.$store.dispatch("updateTasks", response);
+    });
+    this.displayTasks = this.$store.state.tasks;
+  },
+  async updated() {
     await taskService.getTasks().then((response) => {
       this.$store.dispatch("updateTasks", response);
     });
