@@ -17,7 +17,6 @@ export default {
 <style scoped>
 .submit-button {
   display: flex;
-
   color: white;
   font-style: italic;
   justify-content: center;
