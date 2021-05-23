@@ -1,9 +1,21 @@
 <template>
+  <Header />
   <div id="nav">
-    <router-link :to="{ name: 'Home' }">Home</router-link> |
-    <router-link :to="{ name: 'WeatherApp' }">Weather App</router-link> |
-    <router-link :to="{ name: 'ToDo' }">Tasks List</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link>
+    <div class="nav-option">
+      <router-link :to="{ name: 'Home' }">Home</router-link>
+    </div>
+
+    <div class="nav-option">
+      <router-link :to="{ name: 'WeatherApp' }">Weather App</router-link>
+    </div>
+
+    <div class="nav-option">
+      <router-link :to="{ name: 'ToDo' }">Tasks List</router-link>
+    </div>
+
+    <div class="nav-option">
+      <router-link :to="{ name: 'About' }">About</router-link>
+    </div>
   </div>
 
   <router-view />
@@ -11,9 +23,11 @@
 </template>
 
 <script>
+import Header from "@/components/bars/header.vue";
 import Footer from "@/components/bars/footer.vue";
 export default {
   components: {
+    Header,
     Footer,
   },
 };
@@ -28,8 +42,10 @@ export default {
 }
 
 #nav {
+  display: flex;
+  justify-content: space-around;
   padding: 20px;
-  height: 80px;
+  height: 30px;
   text-align: center;
 }
 
@@ -40,7 +56,7 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgba(90, 169, 230, 1);
 }
 
 .page {
@@ -51,5 +67,11 @@ export default {
   /* padding: 10px;
   margin: 10px; */
   height: 100vh;
+}
+.nav-option {
+  align-content: center;
+}
+.nav-option:hover {
+  transform: scale(1.1);
 }
 </style>
