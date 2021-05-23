@@ -32,5 +32,13 @@ export default {
 <style scoped>
 .button {
   cursor: pointer;
+  border: 1px solid rgba(28, 35, 33, 0.5);
+  border-radius: 2px;
+  background: inherit;
+  color: rgba(13, 27 30, 1);
+}
+.button:hover {
+  background-color: rgba(240, 74, 84, 1);
+  color: white;
 }
 </style>
