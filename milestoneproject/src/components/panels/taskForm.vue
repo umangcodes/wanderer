@@ -10,7 +10,7 @@
     <div v-if="toggleTaskPanel != false">
       <form @submit.prevent="formSubmit">
         <div class="task">
-          <h3>Task</h3>
+          <h3 class="heading">Task</h3>
           <input
             type="text"
             placeholder="Please enter task name"
@@ -18,8 +18,8 @@
           />
           {{ taskName }}
         </div>
-        <div class="task category">
-          <h3>Category</h3>
+        <div class="task">
+          <h3 class="heading">Category</h3>
           <select name="category" v-model="category">
             <option value="cat-1">Cat 1</option>
             <option value="cat-2">Cat 2</option>
@@ -28,8 +28,8 @@
           </select>
           <span>{{ category }}</span>
         </div>
-        <div class="task description">
-          <h3>Description</h3>
+        <div class="task">
+          <h3 class="heading">Description</h3>
           <input
             type="text"
             placeholder="Please enter task description"
@@ -37,8 +37,8 @@
           />
           {{ description }}
         </div>
-        <div class="task mark">
-          <h3 style="padding: 0px">Do you want me to mark it?</h3>
+        <div class="task">
+          <h3 class="heading">Do you want me to mark it?</h3>
           <input
             style="height: 25px; width: 25px"
             type="checkbox"
@@ -123,9 +123,9 @@ export default {
 .to-do-app {
   width: 500px;
   height: auto;
-  border: 2px solid white;
+  border: 2px solid rgba(28, 35, 33, 0.5);
   border-radius: 15px;
-  color: white;
+  color: rgba(13, 27 30, 1);
   padding: 10px;
   padding-top: 0px;
   margin: 10px;
@@ -133,9 +133,18 @@ export default {
 .task {
   font-family: "Segoe UI";
   font-size: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 .toggle-button {
   text-align: right;
   padding: 10px;
+}
+
+.heading {
+  margin: 5px 0px 5px 0px;
+}
+.category {
+  margin: 1px;
 }
 </style>
