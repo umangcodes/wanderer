@@ -13,7 +13,7 @@
         label="X"
         emitEvent="closeButton"
         @closeButton="closeClicked(task.id)"
-        style="padding: 10px"
+        class="close-button"
       />
     </div>
   </div>
@@ -83,18 +83,26 @@ export default {
 <style scoped>
 .task-display {
   display: flex;
-  border: 1px solid white;
+  border: 2px solid rgba(28, 35, 33, 0.5);
   width: 500px;
   padding-left: 30px;
   margin: 10px;
   border-radius: 0px 20px 20px 0px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
+}
+.task-display:hover {
+  transition: 0.05s;
+  transform: scale(1.01);
+  /* width: 700px; */
 }
 .highlight {
-  border-left: 20px solid green;
+  border-left: 5px solid rgba(240, 74, 84, 1);
 }
 .text-box {
   width: 500px;
+}
+.close-button {
+  padding: 10px;
+  background-color: inherit;
 }
 </style>
