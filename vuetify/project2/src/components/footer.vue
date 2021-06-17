@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-footer padless>
+    <v-footer app padless>
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="link in links"
