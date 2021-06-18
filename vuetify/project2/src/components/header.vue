@@ -27,6 +27,7 @@ export default {
         { title: "Home", to: "Home" },
         { title: "Dashboard", to: "Dashboard" },
         { title: "About", to: "About" },
+        { title: "Test", to: "Test" },
       ],
     };
   },
