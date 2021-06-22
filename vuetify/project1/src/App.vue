@@ -51,15 +51,18 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+        <a
+          href="https://github.com/umangcodes/wanderer/tree/main/vuetify/project1"
+          style="text-decoration: none"
+        >
+          <v-icon color="grey darken-2">mdi-github</v-icon>
+        </a>
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+        <a href="mailto:meatwork07@gmail.com" style="text-decoration: none">
+          <v-icon color="grey darken-2">mdi-email</v-icon>
+        </a>
       </v-btn>
     </v-app-bar>
     <v-main class="page">
