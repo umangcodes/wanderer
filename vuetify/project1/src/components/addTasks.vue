@@ -1,5 +1,11 @@
 <template>
-  <v-form ref="form" v-model="valid" class="pa-2" lazy-validation>
+  <v-form
+    ref="form"
+    v-model="valid"
+    class="pa-2"
+    lazy-validation
+    @submit.prevent="addTask(newTask)"
+  >
     <v-card elevation="5" class="pa-3">
       <v-text-field
         v-model="newTask.title"
@@ -12,12 +18,7 @@
         label="Description"
         required
       ></v-text-field>
-      <v-btn
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="addTask(newTask)"
-      >
+      <v-btn :disabled="!valid" color="success" class="mr-4" type="submit">
         Add
       </v-btn>
       <v-btn color="red" class="white--text" @click="resetForm"> Reset</v-btn>
