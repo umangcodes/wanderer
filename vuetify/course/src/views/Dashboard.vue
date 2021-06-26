@@ -2,7 +2,7 @@
   <v-card app class="pa-5 mx-auto">
     <v-data-table
       :headers="headers"
-      :items="desserts"
+      :items="employees"
       item-key="name"
       class="elevation-1"
       :search="search"
