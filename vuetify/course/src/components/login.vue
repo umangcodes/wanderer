@@ -1,5 +1,5 @@
 <template>
-  <v-card width="400" class="mx-auto mt-5">
+  <v-card width="400" class="mx-auto mt-5" elevation="5">
     <v-card-title>Login</v-card-title>
     <v-card-text>
       <v-form>
