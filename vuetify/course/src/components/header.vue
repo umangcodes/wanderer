@@ -24,6 +24,7 @@ export default {
       links: [
         { label: "Home", url: "/home" },
         { label: "Login", url: "/" },
+        { label: "Dashboard", url: "/dashboard" },
       ],
     };
   },
