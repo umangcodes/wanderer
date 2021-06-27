@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#0E2383" padless>
+  <v-footer class="cardColor" padless elevation="5">
     <v-row justify="center" no-gutters>
       <v-btn
         v-for="link in links"
@@ -12,7 +12,11 @@
       >
         {{ link.label }}
       </v-btn>
-      <v-col color="#0E2383" class="py-4 text-center white--text" cols="12">
+      <v-col
+        class="py-4 text-center white--text cardColor"
+        elevation="5"
+        cols="12"
+      >
         {{ new Date().getFullYear() }} — <strong>Course @ Vuemastery</strong>
       </v-col>
     </v-row>

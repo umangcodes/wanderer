@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="#0E2383" dark>
+  <v-app-bar app class="cardColor ">
     <v-toolbar-title>Course @ Vuemastery</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn
