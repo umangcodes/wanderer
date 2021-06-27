@@ -1,24 +1,39 @@
 <template>
-  <v-card app class="pa-5 mx-auto">
-    <v-data-table
-      :headers="headers"
-      :items="desserts"
-      item-key="name"
-      class="elevation-1"
-      :search="search"
-      :custom-filter="filterOnlyCapsText"
-      @click:row="selectRow"
-    />
-    <v-snackbar v-model="snackbar">
-      You click on {{ currentItem }}
+  <div>
+    <v-card app class="pa-5 mx-auto cardColor">
+      <v-data-table
+        :headers="headers"
+        :items="desserts"
+        item-key="name"
+        class="elevation-1"
+        :search="search"
+        :custom-filter="filterOnlyCapsText"
+        @click:row="selectRow"
+      />
+      <v-snackbar v-model="snackbar">
+        You click on {{ currentItem }}
 
-      <template v-slot:action="{ attrs }">
-        <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
-  </v-card>
+        <template v-slot:action="{ attrs }">
+          <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </v-card>
+    <v-card app class="pa-5 mx-auto cardColor white--text">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+      reiciendis, officiis ipsa repellendus beatae autem id eum aperiam, fuga
+      dolor iste dolorum error quisquam quo amet iure necessitatibus quas non
+      ea. Ipsa necessitatibus quaerat velit ipsam iusto. Nesciunt eveniet at
+      vero adipisci repudiandae et corrupti ipsum incidunt dolore natus minima
+      est explicabo repellat soluta, non error mollitia deleniti nulla omnis
+      voluptates. Necessitatibus est molestiae culpa itaque. Dignissimos labore
+      eaque minima maxime sequi officiis, sint veniam iusto at animi, error
+      molestias omnis pariatur? Repellat, delectus ipsum harum maiores in quam
+      consequatur accusamus debitis dolorum. Reiciendis doloremque a saepe magni
+      excepturi mollitia.
+    </v-card>
+  </div>
 </template>
 
 <script>
