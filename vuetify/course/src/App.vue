@@ -25,13 +25,18 @@ export default {
 
 <style>
 #app {
-  background: #7c0023e8;
+  background: #fcf7f8;
 }
 .cardColor {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(209, 122, 34, 0.2) !important;
   border-color: white !important;
   box-shadow: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
-  color: #007c59;
+}
+.glassHeader {
+  background-color: rgba(209, 122, 34, 0.2) !important;
+  border-color: white !important;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
 }
 </style>

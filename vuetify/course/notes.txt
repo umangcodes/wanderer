@@ -1,0 +1,5 @@
+how to create glass morphism effect?
+
+- create a moderately transparent panel(background-color)
+- add blur(in px) to backdrop-filter
+- 

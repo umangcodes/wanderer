@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app class="cardColor ">
+  <v-app-bar app class="glassHeader">
     <v-toolbar-title>Course @ Vuemastery</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn
@@ -25,6 +25,7 @@ export default {
         { label: "Home", url: "/home" },
         { label: "Login", url: "/" },
         { label: "Dashboard", url: "/dashboard" },
+        { label: "Sts", url: "/stats" },
       ],
     };
   },
