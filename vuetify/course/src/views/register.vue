@@ -7,7 +7,7 @@
       </v-card-title>
       <v-card-text>
         <!-- Username -->
-        <v-form>
+        <v-form ref="signUpForm">
           <v-row>
             <v-col cols="12">
               <v-text-field
@@ -75,11 +75,13 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col>
-              <v-btn color="warning">Reset Validation</v-btn>
+              <v-btn color="warning" @click="resetValidation"
+                >Reset Validation</v-btn
+              >
             </v-col>
             <v-spacer></v-spacer>
             <v-col>
-              <v-btn color="error">Reset</v-btn>
+              <v-btn color="error" @click="resetForm">Reset</v-btn>
             </v-col>
           </v-row>
         </v-form>
@@ -115,6 +117,14 @@ export default {
       modal: false,
       menu2: false,
     };
+  },
+  methods: {
+    resetForm() {
+      this.$refs.signUpForm.reset();
+    },
+    resetValidation() {
+      this.$refs.signUpForm.resetValidation();
+    },
   },
 };
 </script>

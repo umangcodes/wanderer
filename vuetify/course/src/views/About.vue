@@ -25,9 +25,9 @@
           <v-card-text>
             <h3>Register module</h3>
             <ul>
+              <li>Form and validation reset</li>
               <li>Form validation</li>
               <li>Form actions</li>
-              <li>Form spacing [removed redun. grid comp]</li>
             </ul></v-card-text
           >
         </v-card>

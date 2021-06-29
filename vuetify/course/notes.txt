@@ -2,4 +2,12 @@ how to create glass morphism effect?
 
 - create a moderately transparent panel(background-color)
 - add blur(in px) to backdrop-filter
-- 
+
+
+Reset/ reset validation form:
+- ref(formName) to the form
+- use this.$refs.formName.reset()
+
+or
+- use this.$refs.formName.resetValidation()
+
