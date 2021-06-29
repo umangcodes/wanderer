@@ -7,7 +7,7 @@
       </v-card-title>
       <v-card-text>
         <!-- Username -->
-        <v-form ref="signUpForm">
+        <v-form ref="signUpForm" v-model="signUpValid">
           <v-row>
             <v-col cols="12">
               <v-text-field
@@ -43,7 +43,7 @@
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-text-field
-                    v-model="date"
+                    v-model="specialDate"
                     label="Pick a special date"
                     prepend-icon="mdi-calendar"
                     readonly
@@ -71,7 +71,9 @@
         <v-form>
           <v-row>
             <v-col>
-              <v-btn type="submit" color="success">Submit</v-btn>
+              <v-btn :disabled="!signUpValid" type="submit" color="success"
+                >Submit</v-btn
+              >
             </v-col>
             <v-spacer></v-spacer>
             <v-col>
@@ -94,6 +96,7 @@
 export default {
   data() {
     return {
+      signUpValid: false,
       references: ["Social Media", "Educational Websites", "others"],
       specialDate: "",
       userName: "",
