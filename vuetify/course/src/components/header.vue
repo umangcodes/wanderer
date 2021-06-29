@@ -26,6 +26,7 @@ export default {
         { label: "Login", url: "/" },
         { label: "Dashboard", url: "/dashboard" },
         { label: "Sts", url: "/stats" },
+        { label: "About", url: "/about" },
       ],
     };
   },
