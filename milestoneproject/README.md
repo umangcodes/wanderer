@@ -3,14 +3,11 @@
 ## Scope
 
 ```
-The main aim of this project is to develop a single page application using Vue-3. The page will render two views.
-
-- Home page
-- First view will be for a weather app which will fetch data from openweather server and display it on the page.
-- second view will be for a todo list
-- About page
-
-both pages will have header and footer.
+About the project:
+- This project is developed as a part of my FE-webdev intership at silvertouch technologies.
+- The project is developed using different components of vue.js such as vue 3, vuex, vue-router and also uses axios to call weather api provided by open-weather.
+- Please note this project was designed as a portfolio project and not for public distribution.
+- Feel free to use the code but please change the api-key in store.
 
 
 ```
@@ -23,30 +20,43 @@ router
 axios
 ```
 
-### View 1: Home Page
+### Deployement details:
 
 ```
-Simple home page where all other home buttons redirects.
+- Vercel is used for deployement and main branch of this repository is linked to it.
+- please find this deployment at https://portfolio-alpha-lovat.vercel.app/WeatherApp
 ```
 
-### View 2: Weather application
+### How it works:
 
 ```
-This application take input from user and uses the input for api call. The application uses openweather api for fetching the data.
+- The project uses vue 3 as the base technology. Vuex and vuerouter are also used along with it as mentioned.
 
-The application uses vuex for state management.
+- There are 2 main views
+	- Weather app
+	- To do list[hidden]
 
-Major issue: webpack issue with image binding resolved by 'require' the image files during compilation.
-```
-
-### View 3: Todo application
-
-```
-In progress
-```
-
-### View 4: About
+- Weather app:
+	- weather app asks user for city of interest. Once the user enters city and submits the form, an action is dispatched in the store which mutates the state of the store to store the city(default value is toronto). Then the store calls the api service to get the data which when returned mutates the state to store the value.
+	- Finally when store is populated with the data, the weatherAppDisplay component is rendered which displays the temperature, condition and an image related to the provided data.
 
 ```
-Update in next version...
+
+### Major issues faced during this part of project:
+
+```
+
+	- Image binding was a major issue as the images were in the public directory and not on a remote server. During the compilation process, the images were ignored which in turn created an issue of images not being displayed.
+
+	- This was fixed when the images in discussion were 'require' when path of those images was provided.
+
+```
+
+### Other Things worth mentioning:
+
+```
+
+	- I had worked a little on webdev projects prior to this project and had fundamental level knowledge of the HTML and CSS.
+	- I learned a lot of different things during and after this project such as SASS and material design. This is the reason why the UI of the page look old.
+
 ```

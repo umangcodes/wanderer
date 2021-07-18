@@ -17,11 +17,10 @@ How it works:
 
 - There are 2 main views
 	- Weather app
-	- To do list
+	- To do list[hidden]
 
 - Weather app:
 	- weather app asks user for city of interest. Once the user enters city and submits the form, an action is dispatched in the store which mutates the state of the store to store the city(default value is toronto). Then the store calls the api service to get the data which when returned mutates the state to store the value.
-
 	- Finally when store is populated with the data, the weatherAppDisplay component is rendered which displays the temperature, condition and an image related to the provided data.
 
 
@@ -31,3 +30,6 @@ Major issues faced during this part of project:
 
 	- This was fixed when the images in discussion were 'require' when path of those images was provided.
 
+Other Things worth mentioning:
+	- I had worked a little on webdev projects prior to this project and had fundamental level knowledge of the HTML and CSS.
+	- I learned a lot of different things during and after this project such as SASS and material design. This is the reason why the UI of the page look old.  
