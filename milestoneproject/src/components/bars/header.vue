@@ -5,7 +5,7 @@
         <h1>UA</h1>
       </div>
       <div class="title">
-        <h1>Portfolio Project</h1>
+        <h1>WeatherApp</h1>
       </div>
     </div>
   </div>

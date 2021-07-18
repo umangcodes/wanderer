@@ -24,7 +24,7 @@ axios
 
 ```
 - Vercel is used for deployement and main branch of this repository is linked to it.
-- please find this deployment at https://portfolio-alpha-lovat.vercel.app/WeatherApp
+- please find this deployment at https://weatherapp-st.vercel.app/
 ```
 
 ### How it works:
@@ -46,9 +46,9 @@ axios
 
 ```
 
-	- Image binding was a major issue as the images were in the public directory and not on a remote server. During the compilation process, the images were ignored which in turn created an issue of images not being displayed.
+- Image binding was a major issue as the images were in the public directory and not on a remote server. During the compilation process, the images were ignored which in turn created an issue of images not being displayed.
 
-	- This was fixed when the images in discussion were 'require' when path of those images was provided.
+- This was fixed when the images in discussion were 'require' when path of those images was provided.
 
 ```
 
@@ -56,7 +56,7 @@ axios
 
 ```
 
-	- I had worked a little on webdev projects prior to this project and had fundamental level knowledge of the HTML and CSS.
-	- I learned a lot of different things during and after this project such as SASS and material design. This is the reason why the UI of the page look old.
+-  I had worked a little on webdev projects prior to this project and had fundamental level knowledge of the HTML and CSS.
+- I learned a lot of different things during and after this project such as SASS and material design. This is the reason why the UI of the page look old.
 
 ```
