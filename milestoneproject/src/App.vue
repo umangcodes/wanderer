@@ -9,13 +9,13 @@
       <router-link :to="{ name: 'WeatherApp' }">Weather App</router-link>
     </div>
 
-    <div class="nav-option">
+    <!-- <div class="nav-option">
       <router-link :to="{ name: 'ToDo' }">Tasks List</router-link>
     </div>
 
     <div class="nav-option">
       <router-link :to="{ name: 'About' }">About</router-link>
-    </div>
+    </div> -->
   </div>
 
   <router-view />
